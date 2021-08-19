@@ -1,0 +1,2 @@
+class RoutingNumber < ApplicationRecord
+end
