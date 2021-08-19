@@ -9,8 +9,8 @@ class Transaction < ApplicationRecord
   attr_encrypted :cvv, key: 'This is a key that is 256 bits!!'
 
   validate :expiry_date_cannot_be_in_the_past
-  validate :credit_card_is_valid
-  validate :routing_number_is_valid
+  validate :credit_card_is_valid, unless: :is_bank?
+  validate :routing_number_is_valid, if: :is_bank?
   validates :amount, presence: true
 
 

@@ -92,6 +92,7 @@ class Portal extends React.Component {
     axios.post('/payout', payload,config)
       .then(function (response) {
         console.log(response)
+        window.location.reload(false);
       })
       .catch(function (error) {
         console.log(error)
